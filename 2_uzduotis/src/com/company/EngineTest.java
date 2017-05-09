@@ -28,7 +28,7 @@ public class EngineTest {
 
     @Test
     public void vandensTuris_skaiciuojamasTeisingai() {
-        double turis = engine.vandensTuris(engine.kuboTuris(engine.getKuboKrastine()) - engine.rutulioTuris(engine.getRutulioSkersmuo()));
+        double turis = engine.kuboTuris(engine.getKuboKrastine()) - engine.rutulioTuris(engine.getRutulioSkersmuo());
         assertEquals(30.49, turis, 0.01);
     }
 

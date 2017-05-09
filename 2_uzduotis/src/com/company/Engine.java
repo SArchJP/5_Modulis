@@ -4,6 +4,9 @@ public class Engine {
     private double kuboKrastine;
     private double rutulioSkersmuo;
 
+    public Engine() {
+    }
+
     public Engine(double kuboKrastine, double rutulioSkersmuo) {
         if (kuboKrastine >= 0 && rutulioSkersmuo >= 0) {
             this.kuboKrastine = kuboKrastine;
@@ -19,7 +22,11 @@ public class Engine {
     }
 
     public void setKuboKrastine(double kuboKrastine) {
-        this.kuboKrastine = kuboKrastine;
+        if (kuboKrastine > 0) {
+            this.kuboKrastine = kuboKrastine;
+        } else {
+            throw new IllegalArgumentException("Parametrai turi buti > 0");
+        }
     }
 
     public double getRutulioSkersmuo() {
@@ -27,7 +34,11 @@ public class Engine {
     }
 
     public void setRutulioSkersmuo(double rutulioSkersmuo) {
-        this.rutulioSkersmuo = rutulioSkersmuo;
+        if (rutulioSkersmuo >= 0) {
+            this.rutulioSkersmuo = rutulioSkersmuo;
+        } else {
+            throw new IllegalArgumentException("Parametrai turi buti >= 0");
+        }
     }
 
     public double kuboTuris(double kuboKrastine) {
@@ -38,11 +49,7 @@ public class Engine {
         return (4.0 / 3.0) * Math.PI * Math.pow((rutulioSkersmuo / 2), 3);
     }
 
-    public double vandensTuris(double v) {
-        return 0;
-    }
-
-    public void start(){
-
+    public double vandensTuris() {
+        return kuboTuris(getKuboKrastine()) - rutulioTuris(getRutulioSkersmuo());
     }
 }
