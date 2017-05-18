@@ -75,7 +75,7 @@ public class Engine {
 
     public String rezultatas(int a1, int b1, int c1, int a2, int b2, int c2) {
         int box1 = plotas(a1, b1, c1);
-        int box2 = plotas(a1, b2, c2);
+        int box2 = plotas(a2, b2, c2);
         if (a1 > 100 || b1 > 100 || c1 > 100 || a2 > 100 || b2 > 100 || c2 > 100)
             return "Klaida, metmenys neturi viršiti 100";
         if (box1 == box2) return "Abi vienodų matmenų";
